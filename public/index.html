@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Testing System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📋 Release Testing System</h1>
+            <p class="subtitle">Dokumentation von Release-Tests basierend auf User Stories</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Dashboard View -->
+            <div id="dashboard-view" class="view">
+                <div class="actions">
+                    <button id="new-run-btn" class="btn btn-primary">
+                        <span class="icon">➕</span>
+                        Neuer Test-Durchgang
+                    </button>
+                </div>
+
+                <div class="runs-grid" id="runs-grid">
+                    <!-- Runs werden hier dynamisch eingefügt -->
+                </div>
+            </div>
+
+            <!-- Run Detail View -->
+            <div id="run-detail-view" class="view" style="display: none;">
+                <div class="run-header">
+                    <button id="back-btn" class="btn btn-secondary">
+                        <span class="icon">← Zurück</span>
+                    </button>
+                    <div class="run-info">
+                        <h2 id="run-title"></h2>
+                        <div class="run-meta">
+                            <span id="run-date"></span>
+                            <span id="run-status-badge"></span>
+                        </div>
+                    </div>
+                    <div class="run-actions">
+                        <button id="complete-run-btn" class="btn btn-success">
+                            <span class="icon">✓</span>
+                            Durchgang abschließen
+                        </button>
+                        <button id="reopen-run-btn" class="btn btn-warning" style="display: none;">
+                            <span class="icon">↻</span>
+                            Wiedereröffnen
+                        </button>
+                        <button id="delete-run-btn" class="btn btn-danger">
+                            <span class="icon">🗑</span>
+                            Löschen
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-section">
+                    <div class="progress-info">
+                        <span id="progress-text">0 von 0 Tests abgeschlossen</span>
+                        <span id="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div id="progress-fill" class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Test Items -->
+                <div id="test-categories" class="test-categories">
+                    <!-- Kategorien werden hier dynamisch eingefügt -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal für neuen Durchgang -->
+    <div id="new-run-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Neuer Test-Durchgang</h3>
+                <button class="modal-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <label for="run-name">Name des Durchgangs:</label>
+                <input type="text" id="run-name" class="input" placeholder="z.B. Release 2024-11-26">
+                <div id="modal-error" class="error-message" style="display: none;"></div>
+            </div>
+            <div class="modal-footer">
+                <button id="modal-cancel" class="btn btn-secondary">Abbrechen</button>
+                <button id="modal-create" class="btn btn-primary">Durchgang erstellen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
