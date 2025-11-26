@@ -1,0 +1,22 @@
+{
+  "name": "release-testing-system",
+  "version": "1.0.0",
+  "description": "Release Testing System basierend auf User Stories",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": ["release", "testing", "user-stories"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "better-sqlite3": "^9.2.2",
+    "marked": "^11.0.0",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
